@@ -25,7 +25,7 @@ const root = new Vue({
     data: {
         items: [{
                 text: 'Frutta',
-                done: false,
+                done: true,
             },
 
             {
@@ -42,10 +42,12 @@ const root = new Vue({
                 text: 'Pane',
                 done: false,
             },
-        ]
+        ],
+
+        newItem: '',
     },
     methods: {
-        //Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
+        // Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
         toggleItems(index) {
             this.items[index].done = !this.items[index].done;
         },
@@ -59,6 +61,19 @@ const root = new Vue({
                     return false;
                 }
             })
+        },
+
+        // Aggiungere un Elemento in Pagina
+
+        addItem() {
+            if (this.newItem.trim() !== '') {
+                const newObject = {
+                    text: this.newItem,
+                    done: false,
+                };
+                this.items.push(newObject);
+                this.newItem = '';
+            }
         },
     },
 });

@@ -23,17 +23,18 @@
             <main class="w-50 mx-auto">
 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control">
-                    <button class="btn btn-outline-primary" type="button">Aggiungi</button>
+                    <!-- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista -->
+                    <input type="text" class="form-control" v-model="newItem" @keyup.enter="addItem">
+                    <button class="btn btn-outline-primary" type="button" @click="addItem">Aggiungi</button>
                 </div>
 
                 <ul v-if="items.length >= 1" class="list-group">
                     <li v-for="(item,index) in items" class="list-group-item ">
-                        <div class="d-flex justify-content-between " :class="{done:item.done}" @click="toggleItems(index)">
+                        <div class="d-flex justify-content-between " :class="{done:item.done}">
                             <div>
-                                {{item.text}}
+                                <input class="mx-3" type="checkbox" @click="toggleItems(index)" :checked="item.done" /> {{item.text}}
                             </div>
-                            <button type="button " class="btn-close " @click="deleteItem(index) "></button>
+                            <button type="button " class="btn-close" @click="deleteItem(index)"></button>
                         </div>
                     </li>
                 </ul>
