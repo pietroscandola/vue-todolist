@@ -1,4 +1,5 @@
-.btn-close {
+.btn-close,
+li {
     cursor: pointer;
 }
 

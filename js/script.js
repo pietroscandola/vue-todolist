@@ -45,6 +45,12 @@ const root = new Vue({
         ]
     },
     methods: {
+        //Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
+        toggleItems(index) {
+            this.items[index].done = !this.items[index].done;
+        },
+
+        // Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
         deleteItem(index) {
             this.items = this.items.filter((item, i) => {
                 if (i !== index) {
