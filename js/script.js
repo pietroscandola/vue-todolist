@@ -25,7 +25,7 @@ const root = new Vue({
     data: {
         items: [{
                 text: 'Frutta',
-                done: true,
+                done: false,
             },
 
             {

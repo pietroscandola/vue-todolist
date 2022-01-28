@@ -18,9 +18,15 @@
     <div id="root">
         <div class="container">
             <header>
-                <h1 class="text-center my-5 text-danger">TO DO LIST</h1>
+                <h1 class="text-center my-5 text-primary">TO DO LIST</h1>
             </header>
             <main class="w-50 mx-auto">
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control">
+                    <button class="btn btn-outline-primary" type="button">Aggiungi</button>
+                </div>
+
                 <ul v-if="items.length >= 1" class="list-group">
                     <li v-for="(item,index) in items" class="list-group-item ">
                         <div class="d-flex justify-content-between " :class="{done:item.done}" @click="toggleItems(index)">
