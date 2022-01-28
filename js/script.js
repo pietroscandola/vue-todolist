@@ -44,5 +44,15 @@ const root = new Vue({
             },
         ]
     },
-    methods: {},
+    methods: {
+        deleteItem(index) {
+            this.items = this.items.filter((item, i) => {
+                if (i !== index) {
+                    return true;
+                } else {
+                    return false;
+                }
+            })
+        },
+    },
 });
