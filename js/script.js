@@ -22,6 +22,27 @@ Vue.config.devtools = true;
 
 const root = new Vue({
     el: '#root',
-    data: {},
+    data: {
+        items: [{
+                text: 'Frutta',
+                done: true,
+            },
+
+            {
+                text: 'Carne',
+                done: false,
+            },
+
+            {
+                text: 'Pesce',
+                done: false,
+            },
+
+            {
+                text: 'Pane',
+                done: false,
+            },
+        ]
+    },
     methods: {},
 });
